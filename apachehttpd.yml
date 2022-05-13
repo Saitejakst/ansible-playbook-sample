@@ -1,0 +1,13 @@
+- hosts: all
+  connection: ssh
+  become: yes
+  become_user: root
+  tasks:
+    - name: Ensure APACHE is at the Latest Version
+      yum:
+        name: httpd
+        state: latest
+    - name: Ensure APACHE is running
+      service:
+        name: httpd
+        state: started
