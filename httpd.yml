@@ -1,0 +1,9 @@
+- hosts: all
+  become: yes
+  connection: ssh
+  become_user: root
+  tasks:
+    - name: Installation of wget
+      yum:
+        name: wget
+        state: present
